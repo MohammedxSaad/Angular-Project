@@ -1,0 +1,18 @@
+<button class="btn btn-success" (click)="makeOdd()">Appear Odd Numbers</button>
+<ul class="list-group">
+    <div *ngIf="onlyOdd ; else evenI">
+        <li class="list-group-item" *ngFor="let number of odd"
+        [ngClass]="{oddel:number % 2 !== 0 }">
+            {{number}}   
+        </li>
+    
+        
+    </div>
+    <ng-template #evenI>
+        {{even}}
+    </ng-template>
+
+
+</ul>
+
+<p appBasic> it works</p>

@@ -1,0 +1,18 @@
+.err{
+    color: crimson;
+    font-size: larger;
+}
+.done{
+    color: green;
+    font-size: larger;
+}
+.lab{
+    font-size: larger;
+}
+.cont {
+    display: flex;
+    justify-content: center;
+  }
+.head{
+    margin-right: 3cm;
+}

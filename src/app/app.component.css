@@ -1,0 +1,13 @@
+h3{
+    color: darkblue;
+}
+.background-image{
+    background-image: url('src\app\image\lav.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* height: 100vh; */
+    min-height: 100vh;
+    background-attachment: scroll;
+    background-position: center;
+    
+}

@@ -1,0 +1,31 @@
+
+
+<label >Server Name</label>
+<input type="text" class="form-control" [(ngModel)] = "Name" >
+<p>
+
+</p>
+<button class="btn btn-primary"  (click)="onCreateServer()">Create Server</button>
+
+<p *ngIf=" serverCreated && this.Name != '' ; else noServer" >
+    {{createServer}} 
+</p>
+<ng-template #noServer>
+    
+    <style>
+        .p1{
+            color: crimson;
+        }
+    </style>
+     <p [ngStyle]="{color : 'blue'}">
+        Error: Wrong Input Was Entered!
+    </p>
+</ng-template>
+
+<hr>
+<Label ><b> Avalaibale Servers :</b></Label>
+<p>{{'Server'}} 10 is Active</p>
+<app-new-form></app-new-form>
+
+
+

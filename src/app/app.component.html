@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active"  routerLink="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="/new-form">New Form</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="/anime">Animation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="/accounts">Accounts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="/database">DataBase</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="/organizations">Organizations</a>
+            </li>
+          </ul>
+        
+         <!-- <input type="text" #serverName>
+         <button class="btn btn-primary" (click)="onAddServer(serverName.value)">Add Server</button>
+          <br><br>
+          <button class="btn btn-primary" (click)="onSave()">Sava Servers</button>
+          <button class="btn btn-primary" (click)="onGet()">Get Servers</button> -->
+
+         <!-- <hr>
+          <ul class="list-group" *ngFor="let server of servers">
+              <li class="list-group-item">{{server.name}} (ID: {{server.id}})
+
+              </li>
+          </ul> -->
+      </div>
+  </div>
+
+</div>
+<div class="background-image">
+  <router-outlet></router-outlet>
+</div>
+<!-- <app-animation></app-animation> -->
+<!-- <app-new-form></app-new-form> -->
+
+    

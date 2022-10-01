@@ -1,0 +1,192 @@
+<div class="head"><h1>Organizations</h1></div>
+
+<br>
+<br>
+<div class="container-fluid cont">
+    <div class="col-md-7">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Add New Organization</h4>
+
+                <form>
+                    <div class="row mb-7">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label lab" >Name</label>
+                        <div class="col-sm-7">
+                            <input type="text" id="username" class="form-control" name="Name" [(ngModel)] = "addName" >
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row mb-4">
+                        <label for="horizontal-email-input" class="col-sm-3 col-form-label lab ">Address</label>
+                        <div class="col-sm-7">
+                            <input type="text" id="Prefix" class="form-control" name="Prefix" [(ngModel)] = "addAddress"  >
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label for="horizontal-email-input" class="col-sm-3 col-form-label lab ">Phone Number</label>
+                        <div class="col-sm-7">
+                            <input type="text" id="Prefix" class="form-control" name="Prefix" [(ngModel)] = "addPhoneNumber" >
+                        </div>
+                    </div>
+                    <p class="err">{{addErrMsg}}</p> <p class="done">{{addMsg}}</p>
+
+
+                            <div>
+                              <button class="btn btn-primary w-md" (click)="onAdd()">Add Organization</button>
+                            </div>
+                
+
+                    <!-- <div class="row justify-content-end">
+                        <div class="col-sm-9">
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="horizontalLayout-Check">
+                                <label class="form-check-label" for="horizontalLayout-Check">
+                                    Remember me
+                                </label>
+                            </div> -->
+
+                            
+                        <!-- </div> -->
+                    <!-- </div> -->
+                    
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+<br>
+<br>
+<hr>
+<br>  
+<div class="container-fluid cont">
+    <div class="col-md-7">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Edit Organization</h4>
+
+                <form>
+                    <div class="row mb-7">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label lab" >Enter Organization Id</label>
+                        <div class="col-sm-7">
+                            <input type="text" id="username" class="form-control" name="Name" [(ngModel)] = "editId">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row mb-7">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label lab" >New Name</label>
+                        <div class="col-sm-7">
+                            <input type="text" id="username" class="form-control" name="Name" [(ngModel)] = "editName" >
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row mb-4">
+                        <label for="horizontal-email-input" class="col-sm-3 col-form-label lab ">New Address</label>
+                        <div class="col-sm-7">
+                            <input type="text" id="Prefix" class="form-control" name="Prefix" [(ngModel)] = "editAddress">
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label for="horizontal-email-input" class="col-sm-3 col-form-label lab ">New Phone Number</label>
+                        <div class="col-sm-7">
+                            <input type="text" id="Prefix" class="form-control" name="Prefix" [(ngModel)] = "editPhoneNumber">
+                        </div>
+                    </div>
+                    <p class="err">{{editErrMsg}}</p> <p class="done">{{editMsg}}</p>
+
+
+                            <div>
+                              <button class="btn btn-primary w-md" (click)="onEdit()" >Edit Organization</button>
+                            </div>
+                    
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+<br>
+<hr>
+<br>
+<div class="container-fluid cont">
+    <div class="col-md-7">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Delete Organization</h4>
+
+                <form>
+                    <div class="row mb-7">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label lab" >Organization Id</label>
+                        <div class="col-sm-7">
+                            <input type="text" id="Prefix" class="form-control" name="Prefix" [(ngModel)]="deleteId" >
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <p class="err"></p>  <p class="done"></p>
+
+                            <div>
+                                <button class="btn btn-primary w-md" (click)="onDelete()" >Delete Organization</button>
+                            </div>
+                
+
+                    
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+<br>
+<hr>
+<br>
+<div class="container-fluid cont">
+    <div class="col-md-7">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">View All Organizations</h4>
+
+                <form>
+                    <div class="row mb-7">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label lab" >Admin Password</label>
+                        <div class="col-sm-7">
+                            <input type="text" id="Prefix" class="form-control" name="adminpass" [(ngModel)]="adminPass" >
+                        </div>
+                    </div>
+                    
+                    <p class="err">{{passwordErrMsg}}</p>
+
+                            <div>
+                                <button class="btn btn-primary w-md" (click)="onGet()" >View Organizations</button>
+                            </div>
+                            <br>
+                            <div *ngIf="listAppear" >
+                                
+                                    <ul  class="list-group" *ngFor="let org of organizations  ">
+                                        <li class="list-group-item">
+                                            <p> ID: {{org.id}}  </p> 
+                                            <p> Name: {{org.name}} </p> 
+                                            <p>Address:  {{org.address}}</p>
+                                            <p>Phone Number: {{org.phoneNumber}} </p>
+
+                            
+                                        </li>
+                                        <br>
+                                    </ul>
+
+                                
+                            </div>
+                            
+                
+
+                    
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
